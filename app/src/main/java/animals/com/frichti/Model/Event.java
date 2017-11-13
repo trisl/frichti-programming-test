@@ -1,22 +1,17 @@
 package animals.com.frichti.Model;
 
+import com.google.gson.annotations.Expose;
+
 /**
  * Created by Tristan on 13/11/2017.
  */
 
 public class Event {
+    @Expose
     private String title;
-    private int pictureId;
 
-    public Event() {
-        title = "";
-        pictureId = 0;
-    }
-
-    public Event(String title, int pictureId) {
-        this.title = title;
-        this.pictureId = pictureId;
-    }
+    @Expose
+    private String image;
 
     public String getTitle() {
         return title;
@@ -26,11 +21,11 @@ public class Event {
         this.title = title;
     }
 
-    public int getPictureId() {
-        return pictureId;
+    public String getImage() {
+        return image;
     }
 
-    public void setPictureId(int pictureId) {
-        this.pictureId = pictureId;
+    public void setImage(String image) {
+        this.image = image;
     }
 }
