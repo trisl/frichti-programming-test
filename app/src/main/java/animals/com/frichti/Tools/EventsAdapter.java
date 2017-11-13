@@ -45,6 +45,13 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.EventViewH
         Picasso.with(context).load(event.getImage()).into(holder.image);
         holder.title.setText(event.getTitle());
         holder.address.setText(event.getAddress());
+
+        String dateStart = event.getDateStart();
+        String dateEnd = event.getDateEnd();
+        if (dateStart.equals(dateEnd))
+            holder.date.setText("le " + dateStart);
+        else
+            holder.date.setText("du : " + dateStart + ", au : " + dateEnd);
     }
 
     @Override
@@ -56,6 +63,7 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.EventViewH
         ImageView image;
         TextView title;
         TextView address;
+        TextView date;
 
         EventViewHolder(View itemView) {
             super(itemView);
@@ -63,6 +71,7 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.EventViewH
             image = (ImageView) itemView.findViewById(R.id.picture);
             title = (TextView) itemView.findViewById(R.id.title);
             address = (TextView) itemView.findViewById(R.id.address);
+            date = (TextView) itemView.findViewById(R.id.event_date);
         }
     }
 }
