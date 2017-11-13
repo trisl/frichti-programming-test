@@ -25,12 +25,12 @@ public class MainActivity extends AppCompatActivity {
     private void addEvents() {
         List<Event> events = new ArrayList<>();
 
-        int pictureId = getResources().getIdentifier("ic_information_event_bg", "drawable", getPackageName());
+        //int pictureId = getResources().getIdentifier("ic_information_event_bg", "drawable", getPackageName());
         for (int index = 0; index < 10; ++index) {
             Event event = new Event();
 
             event.setTitle("Paris event " + index);
-            event.setPictureId(pictureId);
+            //event.setPictureId(pictureId);
 
             events.add(event);
         }

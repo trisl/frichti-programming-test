@@ -38,7 +38,7 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.EventViewH
     public void onBindViewHolder(EventViewHolder holder, int position) {
         Event event = events.get(position);
 
-        holder.picture.setBackgroundResource(event.getPictureId());
+        //holder.picture.setBackgroundResource(event.getPictureId());
         holder.title.setText(event.getTitle());
     }
 
@@ -48,13 +48,13 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.EventViewH
     }
 
     static class EventViewHolder extends RecyclerView.ViewHolder {
-        public ImageView picture;
+        //public ImageView picture;
         public TextView title;
 
         public EventViewHolder(View itemView) {
             super(itemView);
 
-            picture = (ImageView) itemView.findViewById(R.id.picture);
+            //picture = (ImageView) itemView.findViewById(R.id.picture);
             title = (TextView) itemView.findViewById(R.id.title);
         }
     }

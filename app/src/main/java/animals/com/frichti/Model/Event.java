@@ -6,16 +6,16 @@ package animals.com.frichti.Model;
 
 public class Event {
     private String title;
-    private int pictureId;
+    private String image;
 
     public Event() {
         title = "";
-        pictureId = 0;
+        image = "";
     }
 
-    public Event(String title, int pictureId) {
+    public Event(String title, String image) {
         this.title = title;
-        this.pictureId = pictureId;
+        this.image = image;
     }
 
     public String getTitle() {
@@ -26,11 +26,11 @@ public class Event {
         this.title = title;
     }
 
-    public int getPictureId() {
-        return pictureId;
+    public String getImage() {
+        return image;
     }
 
-    public void setPictureId(int pictureId) {
-        this.pictureId = pictureId;
+    public void setImage(String image) {
+        this.image = image;
     }
 }
