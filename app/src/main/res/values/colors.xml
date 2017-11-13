@@ -5,4 +5,5 @@
     <color name="color_accent">#00ff99</color>
 
     <color name="color_information_text">#212121</color>
+    <color name="color_event_shape_stroke">#eee</color>
 </resources>
