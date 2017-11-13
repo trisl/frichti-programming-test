@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Frichti</string>
+    <string name="recycler_view_header">Retrouvez tous les événements à Paris !</string>
 </resources>
