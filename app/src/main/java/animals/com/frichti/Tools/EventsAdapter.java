@@ -9,6 +9,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.List;
 
 import animals.com.frichti.Model.Event;
@@ -35,10 +37,11 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.EventViewH
     }
 
     @Override
-    public void onBindViewHolder(EventViewHolder holder, int position) {
+    public void onBindViewHolder(final EventViewHolder holder, int position) {
         Event event = events.get(position);
 
-        //holder.picture.setBackgroundResource(event.getPictureId());
+        Picasso.with(context).load(event.getImage()).into(holder.image);
+
         holder.title.setText(event.getTitle());
     }
 
@@ -48,19 +51,14 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.EventViewH
     }
 
     static class EventViewHolder extends RecyclerView.ViewHolder {
-        //public ImageView picture;
-        public TextView title;
+        ImageView image;
+        TextView title;
 
-        public EventViewHolder(View itemView) {
+        EventViewHolder(View itemView) {
             super(itemView);
 
-            //picture = (ImageView) itemView.findViewById(R.id.picture);
+            image = (ImageView) itemView.findViewById(R.id.picture);
             title = (TextView) itemView.findViewById(R.id.title);
         }
-    }
-
-    public void addEvent(Event event, int position) {
-        events.add(event);
-        notifyItemInserted(position);
     }
 }
