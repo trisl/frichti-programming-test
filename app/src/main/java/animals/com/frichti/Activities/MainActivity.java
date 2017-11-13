@@ -1,7 +1,9 @@
-package animals.com.frichti;
+package animals.com.frichti.Activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import animals.com.frichti.R;
 
 public class MainActivity extends AppCompatActivity {
 
