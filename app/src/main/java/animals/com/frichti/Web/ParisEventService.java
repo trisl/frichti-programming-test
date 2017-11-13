@@ -1,8 +1,6 @@
 package animals.com.frichti.Web;
 
-import java.util.List;
-
-import animals.com.frichti.Model.Event;
+import animals.com.frichti.Model.JSONResponse;
 import retrofit2.Call;
 import retrofit2.http.GET;
 
@@ -11,8 +9,8 @@ import retrofit2.http.GET;
  */
 
 public interface ParisEventService {
-    String BASEURL = "https://opendata.paris.fr/api";
+    String BASEURL = "https://opendata.paris.fr/";
 
-    @GET("/records/1.0/search/?dataset=evenements-a-paris")
-    Call<List<Event>> getEvents();
+    @GET("/api/records/1.0/search/?dataset=evenements-a-paris")
+    Call<JSONResponse> getEvents();
 }
