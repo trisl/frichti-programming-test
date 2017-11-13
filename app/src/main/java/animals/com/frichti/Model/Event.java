@@ -7,7 +7,12 @@ package animals.com.frichti.Model;
 public class Event {
     private String title;
     private int pictureId;
-    
+
+    public Event() {
+        title = "";
+        pictureId = 0;
+    }
+
     public Event(String title, int pictureId) {
         this.title = title;
         this.pictureId = pictureId;
