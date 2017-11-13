@@ -11,6 +11,8 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
+import org.w3c.dom.Text;
+
 import java.util.List;
 
 import animals.com.frichti.Model.Event;
@@ -41,8 +43,17 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.EventViewH
         Event event = events.get(position);
 
         Picasso.with(context).load(event.getImage()).into(holder.image);
-
         holder.title.setText(event.getTitle());
+        holder.address.setText(event.getAddress());
+
+        String dateStart = event.getDateStart();
+        String dateEnd = event.getDateEnd();
+        if (dateStart.equals(dateEnd))
+            holder.date.setText("le " + dateStart);
+        else
+            holder.date.setText("du : " + dateStart + ", au : " + dateEnd);
+
+        holder.price.setText(event.getPricingInfo());
     }
 
     @Override
@@ -53,12 +64,18 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.EventViewH
     static class EventViewHolder extends RecyclerView.ViewHolder {
         ImageView image;
         TextView title;
+        TextView address;
+        TextView date;
+        TextView price;
 
         EventViewHolder(View itemView) {
             super(itemView);
 
             image = (ImageView) itemView.findViewById(R.id.picture);
             title = (TextView) itemView.findViewById(R.id.title);
+            address = (TextView) itemView.findViewById(R.id.address);
+            date = (TextView) itemView.findViewById(R.id.event_date);
+            price = (TextView) itemView.findViewById(R.id.price);
         }
     }
 }
