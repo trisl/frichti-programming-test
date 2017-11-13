@@ -52,6 +52,8 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.EventViewH
             holder.date.setText("le " + dateStart);
         else
             holder.date.setText("du : " + dateStart + ", au : " + dateEnd);
+
+        holder.price.setText(event.getPricingInfo());
     }
 
     @Override
@@ -64,6 +66,7 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.EventViewH
         TextView title;
         TextView address;
         TextView date;
+        TextView price;
 
         EventViewHolder(View itemView) {
             super(itemView);
@@ -72,6 +75,7 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.EventViewH
             title = (TextView) itemView.findViewById(R.id.title);
             address = (TextView) itemView.findViewById(R.id.address);
             date = (TextView) itemView.findViewById(R.id.event_date);
+            price = (TextView) itemView.findViewById(R.id.price);
         }
     }
 }

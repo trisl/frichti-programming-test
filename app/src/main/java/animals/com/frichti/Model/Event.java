@@ -20,6 +20,9 @@ public class Event {
     @SerializedName("date_end")
     @Expose
     private String dateEnd;
+    @SerializedName("pricing_info")
+    @Expose
+    private String pricingInfo;
 
     public String getTitle() {
         return title;
@@ -39,5 +42,9 @@ public class Event {
 
     public String getDateEnd() {
         return dateEnd;
+    }
+
+    public String getPricingInfo() {
+        return pricingInfo;
     }
 }
